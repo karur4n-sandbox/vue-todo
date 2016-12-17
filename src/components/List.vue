@@ -18,7 +18,6 @@ export default {
     Item
   },
   props: {
-    hub: true,
     todos: {
       type: Array,
       required: true
