@@ -5,8 +5,6 @@
       :id="index"
       :title="todo.title"
       :completed="todo.completed"
-      @remove="removeItem"
-      @toggle="toggleItem"
     ></item>
   </div>
 </template>
@@ -19,25 +17,11 @@ export default {
   components: {
     Item
   },
-  data () {
-    return {
-      todos: [
-        { title: 'Buy a milk', completed: false },
-        { title: 'Clean the kitchen', completed: false },
-        { title: 'Do homework', completed: true }
-      ]
-    }
-  },
-  methods: {
-    removeItem: function (itemIndex) {
-      this.todos.splice(itemIndex, 1)
-    },
-    toggleItem: function (itemIndex) {
-      this.todos = this.todos.map((todo, idx) => {
-        if (itemIndex !== idx) return todo
-        todo.completed = !todo.completed
-        return todo
-      })
+  props: {
+    hub: true,
+    todos: {
+      type: Array,
+      required: true
     }
   }
 }

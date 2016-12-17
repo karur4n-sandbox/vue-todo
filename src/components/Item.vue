@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import eventHub from '../event-hub'
+
 export default {
   name: 'item',
   props: {
@@ -39,10 +41,10 @@ export default {
   },
   methods: {
     remove: function () {
-      this.$emit('remove', this.id)
+      eventHub.$emit('remove', this.id)
     },
     toggle: function () {
-      this.$emit('toggle', this.id)
+      eventHub.$emit('toggle', this.id)
     }
   }
 }
