@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+demo: [here](https://karur4n-sandbox.github.io/vue-todo/index.html)
+
 ## Build Setup
 
 ``` bash
